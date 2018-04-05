@@ -1,0 +1,16 @@
+{
+	"name": "uglifyjs",
+	"url": "https://github.com/markknol/hx-uglifyjs",
+	"license": "MIT",
+	"tags": ["haxe","js","uglify","minify","obfuscation"],
+	"description": "Minify using uglifyjs",
+	"version": "0.0.1",
+	"classPath": "src/",
+	"releasenote": "Initial release",
+	"contributors": [
+		"markknol"
+	],
+	"dependencies": {
+
+	}
+}
