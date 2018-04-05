@@ -1,5 +1,5 @@
 -main Main
--cp src/
+-cp test/
 -js bin/uglifyjs.js
 
 -lib uglifyjs
