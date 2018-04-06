@@ -30,5 +30,10 @@ To use in code, add to your build hxml:
 
 # overwrite original output rather then generating a .min.js next to it
 -D uglifyjs_overwrite
-```
 
+# disable compression
+-D uglify_no_compress
+
+# disable mangling (renaming of local variables)
+-D uglify_no_mangle
+```
