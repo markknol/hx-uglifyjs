@@ -1,4 +1,5 @@
 # Haxe/JavaScript Uglify
+[![Build Status](https://travis-ci.org/markknol/hx-uglifyjs.svg?branch=master)](https://travis-ci.org/markknol/hx-uglifyjs)
 
 UglifyJS is a JavaScript parser, minifier, compressor and beautifier toolkit.
 
