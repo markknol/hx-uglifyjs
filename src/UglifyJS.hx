@@ -6,9 +6,11 @@ using haxe.io.Path;
 class UglifyJS {
 
 	public static function run() {
-        if (!Context.defined("uglifyjs_disabled")) {
+		#if !display
+		if (!Context.defined("uglifyjs_disabled")) {
 			Context.onAfterGenerate(compile);
 		}
+		#end
 	}
 
 	static function compile() {
