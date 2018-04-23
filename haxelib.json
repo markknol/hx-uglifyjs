@@ -4,9 +4,9 @@
 	"license": "MIT",
 	"tags": ["haxe","js","uglify","minify","obfuscation"],
 	"description": "Minify using uglifyjs",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"classPath": "src/",
-	"releasenote": "Refactor to expose a compileFile method. Added flags `-D uglify_no_compress` and `-D uglify_no_mangle` to disable compression/mangling. Supported global installation of uglify-js",
+	"releasenote": "Don't run in display mode",
 	"contributors": [
 		"markknol"
 	],
