@@ -32,15 +32,17 @@ class UglifyJS {
 			'--mangle',
 			#end
 			#if uglifyjs_comments
-			'--comments', 
+			'--comments',
 			#end
 			'--output', outPath,
 			'--', inPath
 		];
-		
+
+		#if uglifyjs_comments
 		var uglifyjs_comments = Context.definedValue("uglifyjs_comments");
 		if (uglifyjs_comments.length > 1) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
-		
+		#end
+
 		Sys.command(getCmd(), params);
 	}
 
