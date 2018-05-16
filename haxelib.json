@@ -6,7 +6,7 @@
 	"description": "Minify using uglifyjs",
 	"version": "0.0.4",
 	"classPath": "src/",
-	"releasenote": "support `--comments`",
+	"releasenote": "Support `--comments` using `-D uglifyjs_comments`. To provide a filter, use `-D uglifyjs_comments=/^!/`",
 	"contributors": [
 		"markknol"
 	],
