@@ -47,9 +47,11 @@ class UglifyJS {
 	}
 
 	static function getCmd() {
-		var cmd = Sys.systemName() == 'Windows'
-			? 'node_modules\\.bin\\uglifyjs.cmd'
-			: './node_modules/.bin/uglifyjs';
+		var cmd = Context.defined('uglifyjs_bin')
+			? Context.definedValue('uglifyjs_bin')
+			: Sys.systemName() == 'Windows'
+				? 'node_modules\\.bin\\uglifyjs.cmd'
+				: './node_modules/.bin/uglifyjs';
 		if (!FileSystem.exists(cmd)) cmd = 'uglifyjs'; // try global
 		return cmd;
 	}

@@ -40,4 +40,7 @@ To use in code, add to your build hxml:
 # keep JavaScript comments
 -D uglifyjs_comments
 -D uglifyjs_comments=filter
+
+# override default uglify-js node module path
+-D uglifyjs_bin=path/to/bin/uglifyjs
 ```
