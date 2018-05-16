@@ -37,4 +37,8 @@ To use in code, add to your build hxml:
 
 # disable mangling (renaming of local variables)
 -D uglify_no_mangle
+
+# keep JavaScript comments
+-D uglifyjs_comments
+-D uglifyjs_comments=filter
 ```
