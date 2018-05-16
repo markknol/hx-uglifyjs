@@ -4,9 +4,9 @@
 	"license": "MIT",
 	"tags": ["haxe","js","uglify","minify","obfuscation"],
 	"description": "Minify using uglifyjs",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"classPath": "src/",
-	"releasenote": "Don't run in display mode",
+	"releasenote": "support `--comments`",
 	"contributors": [
 		"markknol"
 	],
