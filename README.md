@@ -9,20 +9,19 @@ This library runs the [uglify-js node module](https://www.npmjs.com/package/ugli
 
 First: Install the node module using NPM:
 
-```
+```cli
 npm install uglify-js --save
 ```
 
 Second: Install using [Haxelib](https://lib.haxe.org/p/uglifyjs/):
 
-```
+```bash
 haxelib install uglifyjs
 ```
 
-
 To use in code, add to your build hxml:
 
-```
+```bash
 -lib uglifyjs
 
 
