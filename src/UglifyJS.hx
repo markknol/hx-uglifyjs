@@ -24,16 +24,24 @@ class UglifyJS {
 	}
 
 	static public function compileFile(inPath: String, outPath: String) {
-		Sys.command(getCmd(), [
+		var params = [
 			#if !uglifyjs_no_compress
 			'--compress',
 			#end
 			#if !uglifyjs_no_mangle
 			'--mangle',
 			#end
+			#if uglifyjs_comments
+			'--comments', 
+			#end
 			'--output', outPath,
 			'--', inPath
-		]);
+		];
+		
+		var uglifyjs_comments = Context.definedValue("uglifyjs_comments");
+		if (uglifyjs_comments.length > 0) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
+		
+		Sys.command(getCmd(), params);
 	}
 
 	static function getCmd() {
