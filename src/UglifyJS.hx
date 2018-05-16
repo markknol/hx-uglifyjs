@@ -39,7 +39,7 @@ class UglifyJS {
 		];
 		
 		var uglifyjs_comments = Context.definedValue("uglifyjs_comments");
-		if (uglifyjs_comments.length > 0) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
+		if (uglifyjs_comments.length > 1) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
 		
 		Sys.command(getCmd(), params);
 	}
