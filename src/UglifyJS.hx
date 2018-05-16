@@ -32,22 +32,26 @@ class UglifyJS {
 			'--mangle',
 			#end
 			#if uglifyjs_comments
-			'--comments', 
+			'--comments',
 			#end
 			'--output', outPath,
 			'--', inPath
 		];
-		
+
+		#if uglifyjs_comments
 		var uglifyjs_comments = Context.definedValue("uglifyjs_comments");
 		if (uglifyjs_comments.length > 1) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
-		
+		#end
+
 		Sys.command(getCmd(), params);
 	}
 
 	static function getCmd() {
-		var cmd = Sys.systemName() == 'Windows'
-			? 'node_modules\\.bin\\uglifyjs.cmd'
-			: './node_modules/.bin/uglifyjs';
+		var cmd = Context.defined('uglifyjs_bin')
+			? Context.definedValue('uglifyjs_bin')
+			: Sys.systemName() == 'Windows'
+				? 'node_modules\\.bin\\uglifyjs.cmd'
+				: './node_modules/.bin/uglifyjs';
 		if (!FileSystem.exists(cmd)) cmd = 'uglifyjs'; // try global
 		return cmd;
 	}
