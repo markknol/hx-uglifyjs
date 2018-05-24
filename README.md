@@ -41,6 +41,9 @@ To use in code, add to your build hxml:
 -D uglifyjs_comments
 -D uglifyjs_comments=filter
 
+# enable source map generation
+-D uglifyjs_sourcemap
+
 # override default uglify-js node module path
 -D uglifyjs_bin=path/to/bin/uglifyjs
 ```

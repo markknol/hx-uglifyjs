@@ -34,6 +34,9 @@ class UglifyJS {
 			#if uglifyjs_comments
 			'--comments',
 			#end
+			#if uglifyjs_sourcemap
+			'--source-map',
+			#end
 			'--output', outPath,
 			'--', inPath
 		];
