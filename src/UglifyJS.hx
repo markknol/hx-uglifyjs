@@ -7,7 +7,7 @@ class UglifyJS {
 
 	public static function run() {
 		#if !display
-		if (!Context.defined("uglifyjs_disabled")) {
+		if (!Context.defined("uglifyjs_disabled") && !Context.defined("uglifyjs_slavemode")) {
 			Context.onAfterGenerate(compile);
 		}
 		#end
