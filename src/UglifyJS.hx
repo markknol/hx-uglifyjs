@@ -1,4 +1,7 @@
+#if macro
 import haxe.macro.Context;
+import haxe.macro.Compiler;
+#end
 import sys.FileSystem;
 using StringTools;
 using haxe.io.Path;
@@ -6,7 +9,7 @@ using haxe.io.Path;
 class UglifyJS {
 
 	public static function run() {
-		#if !display
+		#if (!display && macro)
 		if (!Context.defined("uglifyjs_disabled") && !Context.defined("uglifyjs_slavemode")) {
 			Context.onAfterGenerate(compile);
 		}
@@ -14,13 +17,15 @@ class UglifyJS {
 	}
 
 	static function compile() {
-		var inPath = haxe.macro.Compiler.getOutput();
+		#if macro
+		var inPath = Compiler.getOutput();
 		if (!inPath.endsWith('.js')) {
 			Context.warning('Expected .js extension for output file $inPath', Context.currentPos());
 		} else {
 			var outputPath = if (Context.defined("uglifyjs_overwrite")) inPath else '${inPath.withoutExtension()}.min.js';
 			compileFile(inPath, outputPath);
 		}
+		#end
 	}
 
 	static public function compileFile(inPath: String, outPath: String) {
@@ -50,11 +55,13 @@ class UglifyJS {
 	}
 
 	static function getCmd() {
-		var cmd = Context.defined('uglifyjs_bin')
+		
+		var cmd = #if macro Context.defined('uglifyjs_bin')
 			? Context.definedValue('uglifyjs_bin')
-			: Sys.systemName() == 'Windows'
+			: #end Sys.systemName() == 'Windows'
 				? 'node_modules\\.bin\\uglifyjs.cmd'
 				: './node_modules/.bin/uglifyjs';
+		
 		if (!FileSystem.exists(cmd)) cmd = 'uglifyjs'; // try global
 		return cmd;
 	}

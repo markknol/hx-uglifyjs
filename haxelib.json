@@ -4,9 +4,9 @@
 	"license": "MIT",
 	"tags": ["haxe","js","uglify","minify","obfuscation"],
 	"description": "Minify using uglifyjs",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"classPath": "src/",
-	"releasenote": "Added new flag `-D uglifyjs_slavemode` to disable minification without setting `-D uglifyjs_disabled` in order to avoid confusion when controlled by other tools like modular.",
+	"releasenote": "Enable to run `compileFile()` from non macro context, like neko.",
 	"contributors": [
 		"markknol"
 	],
