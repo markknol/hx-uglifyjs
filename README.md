@@ -9,6 +9,12 @@ This library runs the [uglify-js node module](https://www.npmjs.com/package/ugli
 
 First: Install the node module using NPM:
 
+To have uglify accessible globally use:
+```cli
+npm install uglify-js -g
+```
+
+Use the compiler flag: `-D uglifyjs_bin` for this path
 ```cli
 npm install uglify-js --save
 ```
