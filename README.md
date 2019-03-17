@@ -9,14 +9,14 @@ This library runs the [uglify-js node module](https://www.npmjs.com/package/ugli
 
 First: Install the node module using NPM:
 
-To have uglify accessible globally use:
+To install locally on your project: (recommended)
 ```cli
-npm install uglify-js -g
+npm install uglify-js --save-dev
 ```
 
-Use the compiler flag: `-D uglifyjs_bin` for this path
+To install globally use:
 ```cli
-npm install uglify-js --save
+npm install uglify-js -g
 ```
 
 Second: Install using [Haxelib](https://lib.haxe.org/p/uglifyjs/):
