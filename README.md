@@ -47,9 +47,31 @@ To use in code, add to your build hxml:
 -D uglifyjs_comments
 -D uglifyjs_comments=filter
 
+# override default uglify-js node module path
+-D uglifyjs_bin=path/to/bin/uglifyjs
+
 # enable source map generation
 -D uglifyjs_sourcemap
 
-# override default uglify-js node module path
--D uglifyjs_bin=path/to/bin/uglifyjs
+# sourcemap generation options.
+# See UglifyJS docs for details on usage.
+## url='url/to/sourcemap/directory/OutFile.map'
+## value will default to just OutFile.map if define value is not specified
+-D uglifyjs_sourcemap_url[='url/to/sourcemap/directory/']
+
+## includeSources
+-D uglifyjs_sourcemap_sources
+
+## base=path/to/base
+-D uglifyjs_sourcemap_base=path/to/base
+
+## root=path/to/root
+-D uglifyjs_sourcemap_root=path/to/root
+
+## content=path/to/inputmap.js.map
+-D uglifyjs_sourcemap_content=path/to/inputmap.js.map
+
+## file=path/to/InFile.js
+-D uglifyjs_sourcemap_file=path/to/InFile.js
+
 ```
