@@ -46,6 +46,41 @@ class UglifyJS {
 			'--', inPath
 		];
 
+		#if uglifyjs_sourcemap
+		var sourcemapParams = [
+			#if uglifyjs_sourcemap_url
+			"url='" +
+				#if macro (Context.definedValue("uglifyjs_sourcemap_url") != "1"
+					? Context.definedValue("uglifyjs_sourcemap_url")
+					: "")
+				+ #end Path.withoutDirectory(outPath) + ".map'",
+			#end
+			#if uglifyjs_sourcemap_sources
+			'includeSources',
+			#end
+			#if macro
+			#if uglifyjs_sourcemap_base
+			"base='" + Context.definedValue("uglifyjs_sourcemap_base") + "'",
+			#end
+			#if uglifyjs_sourcemap_content
+			"content='" + Context.definedValue("uglifyjs_sourcemap_content") + "'",
+			#end
+			#if uglifyjs_sourcemap_filename
+			"filename='" + Context.definedValue("uglifyjs_sourcemap_filename") + "'",
+			#end
+			#if uglifyjs_sourcemap_root
+			"root='" + Context.definedValue("uglifyjs_sourcemap_root") + "'",
+			#end
+			#end
+		];
+
+		var sourcemapArgs = sourcemapParams.join(',');
+		if (sourcemapArgs.trim().length > 0) {
+			params.insert(params.indexOf("--source-map") + 1, sourcemapArgs);
+		}
+		#end
+
+
 		#if uglifyjs_comments
 		var uglifyjs_comments = Context.definedValue("uglifyjs_comments");
 		if (uglifyjs_comments.length > 1) params.insert(params.indexOf("--comments") + 1, uglifyjs_comments);
