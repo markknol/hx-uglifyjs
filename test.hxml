@@ -1,5 +1,21 @@
 -main Main
--cp test/
+-cp test
+-lib uglifyjs
+
+--each
+
+# test with normal settings
 -js bin/uglifyjs.js
 
--lib uglifyjs
+--next
+
+-js bin/uglifyjs.js
+
+# test again with additional settings
+-D uglifyjs_disabled
+-D uglifyjs_overwrite
+-D uglify_no_compress
+-D uglify_no_mangle
+-D uglifyjs_comments
+-D uglifyjs_sourcemap
+-D uglifyjs_sourcemap_sources
