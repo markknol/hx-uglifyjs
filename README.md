@@ -1,5 +1,5 @@
 # Haxe/JavaScript Uglify
-[![Build Status](https://travis-ci.org/markknol/hx-lzstring.svg?branch=master)](https://travis-ci.org/markknol/hx-lzstring) [![Haxelib Version](https://img.shields.io/github/tag/markknol/hx-lzstring.svg?label=haxelib)](http://lib.haxe.org/p/lzstring)
+[![Build Status](https://travis-ci.org/markknol/hx-uglifyjs.svg?branch=master)](https://travis-ci.org/markknol/hx-uglifyjs) [![Haxelib Version](https://img.shields.io/github/tag/markknol/hx-uglifyjs.svg?label=haxelib)](http://lib.haxe.org/p/uglifyjs)
 
 UglifyJS is a JavaScript parser, minifier, compressor and beautifier toolkit.
 
