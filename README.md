@@ -3,7 +3,7 @@
 
 UglifyJS is a JavaScript parser, minifier, compressor and beautifier toolkit.
 
-This library runs the [uglify-js node module](https://www.npmjs.com/package/uglify-js) after your Haxe/JavaScript build completed.
+This library runs the [`uglify-js` node module](https://www.npmjs.com/package/uglify-js) after your Haxe/JavaScript build completed.
 
 ## Installation
 
@@ -75,3 +75,7 @@ To use in code, add to your build hxml:
 -D uglifyjs_sourcemap_file=path/to/InFile.js
 
 ```
+
+## Using Terser as alternative of Uglify
+
+If you are using [`terser` node module](https://www.npmjs.com/package/terser) instead of `uglifyjs`, you can just use `-D uglifyjs_bin=node_modules/.bin/terser` (assuming it's a local dependency) since both API's are the same.
