@@ -42,6 +42,9 @@ class UglifyJS {
 			#if uglifyjs_sourcemap
 			'--source-map',
 			#end
+			#if uglifyjs_beautify
+			"--beautify",
+			#end
 			'--output', outPath,
 			'--', inPath
 		];

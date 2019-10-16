@@ -38,14 +38,17 @@ To use in code, add to your build hxml:
 -D uglifyjs_overwrite
 
 # disable compression
--D uglify_no_compress
+-D uglifyjs_no_compress
 
 # disable mangling (renaming of local variables)
--D uglify_no_mangle
+-D uglifyjs_no_mangle
 
 # keep JavaScript comments
 -D uglifyjs_comments
 -D uglifyjs_comments=filter
+
+# keep line breaks and indent the generated code
+-D uglifyjs_beautify
 
 # override default uglify-js node module path
 -D uglifyjs_bin=path/to/bin/uglifyjs
