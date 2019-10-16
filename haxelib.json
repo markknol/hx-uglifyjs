@@ -4,9 +4,9 @@
 	"license": "MIT",
 	"tags": ["haxe","js","uglify","minify","obfuscation"],
 	"description": "Minify using uglifyjs",
-	"version": "0.0.91",
+	"version": "1.0.0",
 	"classPath": "src/",
-	"releasenote": "Fix missing extraParams.hxml",
+	"releasenote": "add -D uglifyjs_beautify",
 	"contributors": [
 		"markknol"
 	],
